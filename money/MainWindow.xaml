@@ -5,20 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:money"
         mc:Ignorable="d"
-        Title="EasyMoney" Height="600" Width="400">
+        Title="EasyMoney" Height="600" Width="400"
+        Closed="Window_Closed">
     <Grid>
-        <Grid.RowDefinitions>
+        <!--定義格子-->
+         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Width="360">
-            <local:NewMoney VerticalAlignment="Top"></local:NewMoney>
-        </StackPanel>
+
+        <!--上方記帳區-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="MoneyList" Width="360">
+                <local:NewMoney VerticalAlignment="Top"></local:NewMoney>
+            </StackPanel>
+        </ScrollViewer>
 
         <!--下方藍色區塊-->        
         <Rectangle Grid.Row="1" Fill="DodgerBlue"></Rectangle>
             <TextBlock Grid.Row="1" Foreground="White" FontSize="14" Margin="330 12 0 70">總支出</TextBlock>
-            <TextBlock Grid.Row="1" Foreground="White" FontSize="45" Width="350" Height="50" Margin="10 0 10 0" TextAlignment="Right" >2990</TextBlock>
-        <local:Bottom1 Grid.Row="1" Margin="0 0 280 0"></local:Bottom1>
+            <TextBlock x:Name="TotalMoney" Grid.Row="1" Foreground="White" FontSize="45" Width="350" Height="50" Margin="10 0 10 0" TextAlignment="Right" >2990</TextBlock>
+        <local:Bottom1 x:Name="NewBtn" Grid.Row="1" Margin="0 0 280 0" MouseDown="NewBtn_MouseDown"></local:Bottom1>
     </Grid>
 </Window>

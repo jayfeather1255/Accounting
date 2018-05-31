@@ -20,9 +20,36 @@ namespace money
     /// </summary>
     public partial class NewMoney : UserControl
     {
+        // 封裝屬性：日期
+        public int Days
+        {
+            get
+            {
+                return int.Parse(Day.Text);
+            }
+        }
+
+        // 封裝屬性：購買物品文字
+        public string BuyThings
+        {
+            get
+            {
+                return BuyText.Text;
+            }
+        }
+
+        // 封裝屬性：金額
+        public int Money
+        {
+            get
+            {
+                return int.Parse(Spend.Text);
+            }
+        }
+        
         public NewMoney()
         {
             InitializeComponent();
-        }
+        }             
     }
 }
