@@ -19,15 +19,16 @@ namespace money
     /// NewMoney.xaml 的互動邏輯
     /// </summary>
     public partial class NewMoney : UserControl
-    {
-        // 封裝屬性：日期
-        public int Days
+    {        
+
+        /*// 封裝屬性：日期
+        public string Days
         {
             get
             {
-                return int.Parse(Day.Text);
+                return Day.Text;
             }
-        }
+        }*/
 
         // 封裝屬性：購買物品文字
         public string BuyThings
@@ -38,14 +39,16 @@ namespace money
             }
         }
 
-        // 封裝屬性：金額
+        /* // 封裝屬性：金額
         public int Money
         {
             get
             {
-                return int.Parse(Spend.Text);
+                int SpendMoney = int.Parse(Spend.Text);
+                return SpendMoney;
             }
-        }
+            
+        }*/
         
         public NewMoney()
         {

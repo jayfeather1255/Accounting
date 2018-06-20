@@ -22,13 +22,13 @@ namespace money
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             int Total = 0;
 
             foreach (NewMoney item in MoneyList.Children)
             {
-                Total += item.Money;
+                /*Total += local:NewMoeny.Spend;*/
             }
 
             string TotalMoney = Total.ToString();
@@ -36,6 +36,7 @@ namespace money
 
         private void NewBtn_MouseDown(object sender, MouseButtonEventArgs e)
         {
+                        
             // 產生新的記帳格子
             NewMoney item = new NewMoney();
 
